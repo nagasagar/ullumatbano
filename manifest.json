@@ -1,0 +1,30 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name" : "UlluMatBano",
+  "version" : "1.0.53",
+  "description" : "Get Best price of a product from online websites. Compare prices on different prices instantly",
+  "background" : {
+    "scripts": ["background.js"]
+  },
+  "permissions" : ["storage" ],
+  "icons" : {
+    "16" : "mcicon16.png",
+    "48" : "mcicon48.png",
+    "128" : "mcicon128.png"
+  },
+  "content_scripts" : [
+    {
+      "matches" : ["<all_urls>"],
+      "js" : [ "jquery-2.0.0.min.js","jquery-ui-1.10.3.custom.min.js","date.js",
+				"affymake.js","ntsuccfuncs.js",
+				"fetchprodfuncs.js","fetchurlfuncs.js",
+				"helperfuncs.js","jaxrex.js","contentscript.js" ],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ],
+ "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+  "web_accessible_resources" : [ "mcicon.png" , "mciconalert.png","mciconalert32.png"],
+  "manifest_version": 2
+}
